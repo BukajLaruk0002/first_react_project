@@ -5,20 +5,22 @@ import Opis from './opis.jsx'
 import opisy from './Opisy.js'
 
 function App() {
-  const changeDESC = (text) => {
-  console.log(text);
+  let selectedDESC = "first";
+
+  const changeDESC = (DESCkey) => {
+    selectedDESC = DESCkey;
 };
   return (
     <>
       <Images/>
       <h1>Vite + React</h1>
       <div className='buttons'>
-        <Button onClick={() => {console.log("first button")}}>first</Button>
-        <Button onClick={() => changeDESC("second button")}>second</Button>
-        <Button onClick={() => {console.log("third button")}}>third</Button>
+        <Button onClick={() => changeDESC("first")}>first</Button>
+        <Button onClick={() => changeDESC("second")}>second</Button>
+        <Button onClick={() => changeDESC("third")}>third</Button>
       </div>
       <div className="card">
-        <Opis>dwljcjwdbhjfdhwcb</Opis>
+        <Opis>{opisy[selectedDESC]}</Opis>
       </div>
       
     </>
