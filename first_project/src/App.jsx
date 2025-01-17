@@ -2,7 +2,9 @@ import './App.css'
 import Images from './test.jsx'
 import Button from './Button.jsx'
 function App() {
-
+const clickHandler = (text) => {
+  console.log(text);
+};
   return (
     <>
       <Images/>
@@ -15,10 +17,9 @@ function App() {
           console.log("first button");
           }
         }>
-
         </Button>
         <Button onClick={() => {
-          console.log("pepek");
+          clickHandler("second button")
         }}></Button>
         <Button></Button>
       </div>
