@@ -7,10 +7,9 @@ import Opis from './opis.jsx';
 import opisy from './Opisy.js';
 
 function App() {
-  let selectedDESC = "first";
-
+  const [description, setDESC]= useState("");
   const changeDESC = (DESCkey) => {
-    selectedDESC = DESCkey;
+    setDESC(DESCkey);
 };
   return (
     <>
@@ -22,7 +21,7 @@ function App() {
         <Button onClick={() => changeDESC("third")}>third</Button>
       </div>
       <div className="card">
-        <Opis>{opisy[selectedDESC]}</Opis>
+        <Opis>{opisy[description]}</Opis>
       </div>
       
     </>
