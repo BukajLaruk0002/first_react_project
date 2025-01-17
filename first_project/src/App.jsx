@@ -21,7 +21,14 @@ function App() {
         <Button onClick={() => changeDESC("third")} isActive={description === "third"}>third</Button>
       </div>
       <div className="card">
-        <Opis>{opisy[description]}</Opis>
+       <h3>Descriptiones</h3>
+        {/* {
+          description ? (<Opis>{opisy[description]}</Opis>):
+          <p>Please make your choice</p>
+        } */}
+      
+        {description && <Opis>{description[opisy]}</Opis>}
+        {!description && <p>Please make your choice</p>}
       </div>
       
     </>
