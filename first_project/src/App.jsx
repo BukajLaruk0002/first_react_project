@@ -11,6 +11,11 @@ function App() {
       
       </div>
       <h1>Vite + React</h1>
+      <div className='buttons'>
+        <Button></Button>
+        <Button></Button>
+        <Button></Button>
+      </div>
       <div className="card">
       </div>
       
