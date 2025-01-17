@@ -14,6 +14,7 @@ const Images = () => (
     </a>
   </div>
 );
+*/
 function App() {
   const [count, setCount] = useState(0)
 
@@ -28,8 +29,7 @@ function App() {
       </div>
       
     </>
-  )
+  );
 }
 
-export default App
-*/
+export default App;
