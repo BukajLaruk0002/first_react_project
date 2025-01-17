@@ -1,8 +1,10 @@
-import './App.css'
-import Images from './test.jsx'
-import Button from './Button.jsx'
-import Opis from './opis.jsx'
-import opisy from './Opisy.js'
+import { useState } from 'react';
+
+import './App.css';
+import Images from './test.jsx';
+import Button from './Button.jsx';
+import Opis from './opis.jsx';
+import opisy from './Opisy.js';
 
 function App() {
   let selectedDESC = "first";
