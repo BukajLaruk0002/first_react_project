@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import './test.jsx'
+import Images from './test.jsx'
 /*
 const Images = () => (
   <div>
