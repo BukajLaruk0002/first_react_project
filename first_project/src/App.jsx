@@ -13,15 +13,9 @@ const clickHandler = (text) => {
       </div>
       <h1>Vite + React</h1>
       <div className='buttons'>
-        <Button onClick={() => {
-          console.log("first button");
-          }
-        }>
-        </Button>
-        <Button onClick={() => {
-          clickHandler("second button")
-        }}></Button>
-        <Button></Button>
+        <Button color="blue" onClick={() => {console.log("first button");}}>first</Button>
+        <Button title="second button" onClick={() => {clickHandler("second button");}}>second</Button>
+        <Button color="red" onClick={() => {console.log("third button");}}>third</Button>
       </div>
       <div className="card">
       </div>
