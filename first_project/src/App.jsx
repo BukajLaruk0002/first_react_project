@@ -8,9 +8,6 @@ const clickHandler = (text) => {
   return (
     <>
       <Images/>
-      <div>
-      
-      </div>
       <h1>Vite + React</h1>
       <div className='buttons'>
         <Button color="blue" onClick={() => {console.log("first title");}}>first</Button>
