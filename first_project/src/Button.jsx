@@ -1,8 +1,5 @@
-const Button = ({color = 'pink', title='Example title', onClick, children, }) =>(
-<button style={{backgroundColor: color}} onClick= {onClick}>
-<p>
-    {title}
-</p>
+const Button = ({isActive, onClick, children, }) =>(
+<button style={{backgroundColor: isActive ? "green" : undefined}} onClick= {onClick}>
 {children}
 </button>
 );

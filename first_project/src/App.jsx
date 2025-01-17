@@ -2,6 +2,7 @@ import './App.css'
 import Images from './test.jsx'
 import Button from './Button.jsx'
 import Opis from './opis.jsx'
+import opisy from './Opisy.js'
 
 function App() {
 const clickHandler = (text) => {
@@ -12,11 +13,12 @@ const clickHandler = (text) => {
       <Images/>
       <h1>Vite + React</h1>
       <div className='buttons'>
-        <Button color="blue" onClick={() => {console.log("first title")}}>first <Opis>Opis</Opis></Button>
-        <Button title="second button" onClick={() => clickHandler("second title")}>second<Opis>oPIS</Opis></Button>
-        <Button color="red" onClick={() => {console.log("third title")}}>third<Opis>Sipo</Opis></Button>
+        <Button onClick={() => {console.log("first button")}}>first</Button>
+        <Button onClick={() => clickHandler("second button")}>second</Button>
+        <Button onClick={() => {console.log("third button")}}>third</Button>
       </div>
       <div className="card">
+        <Opis>dwljcjwdbhjfdhwcb</Opis>
       </div>
       
     </>
