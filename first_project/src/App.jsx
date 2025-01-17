@@ -11,8 +11,15 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className='buttons'>
-        <Button></Button>
-        <Button></Button>
+        <Button onClick={() => {
+          console.log("first button");
+          }
+        }>
+
+        </Button>
+        <Button onClick={() => {
+          console.log("pepek");
+        }}></Button>
         <Button></Button>
       </div>
       <div className="card">

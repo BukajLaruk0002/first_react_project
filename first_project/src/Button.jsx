@@ -1,4 +1,4 @@
-const Button = ({color, title='Example title', children}) => 
+const Button = ({color, title='Example title', onClick, children}) => 
 <button>
 <p>
     {title}
