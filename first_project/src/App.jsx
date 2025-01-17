@@ -2,7 +2,6 @@ import './App.css'
 import Images from './test.jsx'
 import Button from './Button.jsx'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
