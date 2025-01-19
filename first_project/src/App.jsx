@@ -19,6 +19,7 @@ function App() {
         <Button onClick={() => changeDESC("first")} isActive={description === "first"}>first</Button>
         <Button onClick={() => changeDESC("second")} isActive={description === "second"}>second</Button>
         <Button onClick={() => changeDESC("third")} isActive={description === "third"}>third</Button>
+        <Button onClick={() => changeDESC("fourth")} isActive={description === "fourth"}>fourth</Button>
       </div>
       <div className="card">
        <h3>Descriptiones</h3>
