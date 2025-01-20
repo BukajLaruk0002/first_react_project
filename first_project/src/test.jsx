@@ -11,11 +11,16 @@ const Images = () => (
     <a href="https://react.dev" target="_blank">
     <img src={reactLogo} className="logo react" alt="React logo" />
     </a>
-    <img src="https://cdn-icons-png.flaticon.com/256/6335/6335489.png" className="logo one" alt="one logo" />
-    <img src="https://cdn-icons-png.flaticon.com/256/6947/6947566.png" className="logo two" alt="two logo" />
-    <img src="https://cdn-icons-png.flaticon.com/256/6947/6947565.png" className="logo three" alt="three logo" />
-    <img src="https://cdn-icons-png.flaticon.com/256/6335/6335600.png" className="logo four" alt="four logo" />
   </div>
 );
+  const Img = () => (
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/256/6335/6335489.png" className="logo one" alt="one logo" />
+      <img src="https://cdn-icons-png.flaticon.com/256/6947/6947566.png" className="logo two" alt="two logo" />
+      <img src="https://cdn-icons-png.flaticon.com/256/6947/6947565.png" className="logo three" alt="three logo" />
+      <img src="https://cdn-icons-png.flaticon.com/256/6335/6335600.png" className="logo four" alt="four logo" />
+    </div>
+  );
+
 
 export default Images;
