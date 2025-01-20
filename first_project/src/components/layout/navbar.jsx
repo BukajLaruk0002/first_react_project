@@ -1,5 +1,5 @@
-import { Flex } from "@chakra-ui/react";
-
+import { Flex, Text, Icon } from "@chakra-ui/react";
+import { ShoppingCart } from "lucide-react"; 
 const Navbar = () => {
     return (
     <Flex width={"100%"} 
