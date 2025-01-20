@@ -13,7 +13,7 @@ const Images = () => (
     </a>
   </div>
 );
-  const Img = () => (
+  const showImg = () => (
     <div>
       <img src="https://cdn-icons-png.flaticon.com/256/6335/6335489.png" className="logo one" alt="one logo" />
       <img src="https://cdn-icons-png.flaticon.com/256/6947/6947566.png" className="logo two" alt="two logo" />
