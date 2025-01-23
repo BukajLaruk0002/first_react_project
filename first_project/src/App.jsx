@@ -1,8 +1,7 @@
-import { Heading } from "@chakra-ui/react";
-import Layout from "./components/layout";
+import Layout from "./components/Layout";
 
 const App = () => {
-  return <Layout>App</Layout>
+  return <Layout>App</Layout>;
 };
 
 export default App;
