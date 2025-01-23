@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Flex, Box } from "@chakra-ui/react";
 
-import Navbar from "./Navbar";
+import Navbar from "./navbar";
 import Footer from "./Footer";
 
 const Layout = ({ children }) => {
