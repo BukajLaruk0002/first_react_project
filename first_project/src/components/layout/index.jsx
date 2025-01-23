@@ -3,6 +3,7 @@ import { Flex, Box } from "@chakra-ui/react";
 
 import Navbar from "./navbar";
 import Footer from "./Footer";
+import { Outlet } from "react-router";
 
 const Layout = ({ children }) => {
   return (
@@ -16,7 +17,7 @@ const Layout = ({ children }) => {
         marginTop={"70px"}
         padding={5}
       >
-        {children}
+        <Outlet/>
       </Box>
       <Footer />
     </Flex>
