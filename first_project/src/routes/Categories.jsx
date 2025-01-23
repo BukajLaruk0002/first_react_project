@@ -1,4 +1,4 @@
-import { Heading } from "lucide-react";
+import { Heading } from "@chakra-ui/react";
 const Categories = () => {
   return <Heading>Categories page</Heading>;
 };

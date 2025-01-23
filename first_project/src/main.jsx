@@ -4,7 +4,6 @@ import { Provider } from "./components/ui/provider";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Categories from "./routes/Categories.jsx";
 import Layout from "./components/layout/index.jsx";
-import App from "./App.jsx";
 import Home from "./routes/Home.jsx";
 import Account from "./routes/Account.jsx";
 

@@ -1,7 +1,8 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { NavLink } from "react-router";
+import { Link } from "react-router";
 import Logo from "./Logo";
- 
+import AppLink from "./AppLink";
 
 const Navbar = () => {
   return (
@@ -14,23 +15,13 @@ const Navbar = () => {
       backgroundColor="blue.400"
       shadow="md"
     >
-      <Logo />
-      <NavLink 
-        to="/categories" 
-        className={({ isActive }) => (isActive ? "red" : "white")} 
-        end
-      >
-        <Text 
-          size="xl" 
-          fontWeight="bold" 
-          mr={10} 
-          cursor="pointer" 
-          _hover={{ color: "blue.300", }}
-          transition={"all ease-in-out 0,3s"}
-        >
-          Categories
-        </Text>
-      </NavLink>
+      <Link to="/">
+        <Logo />
+      </Link>
+      <Flex gap={10}>
+        <AppLink to="/categories">Categories</AppLink>
+        <AppLink to="/account">Account</AppLink>
+      </Flex>
     </Flex>
   );
 };
