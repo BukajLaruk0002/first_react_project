@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
         marginTop={"70px"}
         padding={5}
       >
-        <Outlet/>
+        <Outlet />
       </Box>
       <Footer />
     </Flex>
