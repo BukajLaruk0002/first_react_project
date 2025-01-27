@@ -1,66 +1,23 @@
-import { useEffect, useState } from "react";
 import { Text, Flex, Spinner } from "@chakra-ui/react";
-import axios from "axios";
+import useSWR from "swr";
 
 const Categories = () => {
-  const [loading, setLoading] = useState(true);
-  const [categories, setCategories] = useState([]);
-  const [error, setError] = useState(false);
+  const { data, error, isLoading } = useSWR("/products/categories");
 
-  // useEffect(() => {
-  //   axios
-  //     .get("https://fakestoreapi.com/products/categories")
-  //     .then((response) => {
-  //       console.log(response.status);
-  //       setCategories(response.data);
-  //     })
-  //     .catch((error) => {
-  //       setError(true);
-  //     })
-  //     .finally(() => {
-  //       setLoading(false);
-  //     });
-  // }, []);
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const response = await axios.get(
-          "https://fakestoreapi.com/products/categories"
-        );
-
-        setCategories(response.data);
-      } catch (error) {
-        setError(true);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCategories();
-  }, []);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     console.log("TEST Interval");
-  //   }, 200);
-
-  //   const timeout = setTimeout(() => {
-  //     console.log("TEST Timeout");
-  //   }, 200);
-
-  //   return () => {
-  //     clearInterval(interval);
-  //     clearTimeout(timeout);
-  //   };
-  // }, []);
+  console.log(data);
 
   return (
-    <Flex gap={5} flexDir={"column"}>
-      {loading && <Spinner size="xl" />}
-      {error && <Text color="red">{"Error"}</Text>}
-      {categories.map((category) => (
-        <Text key={category}>{category}</Text>
+    <Flex justifySelf={"center"} gap={5}>
+      {isLoading && <Spinner size="xl" />}
+      {error && (
+        <Text fontSize="7xl" color="red">
+          {"Error"}
+        </Text>
+      )}
+      {data?.map((category) => (
+        <Text boxSizing="border-box" borderStyle="inset" key={category}>
+          {category}
+        </Text>
       ))}
     </Flex>
   );
