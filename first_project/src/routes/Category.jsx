@@ -41,7 +41,7 @@ const Category = () => {
                   {product.price}$
                 </Text>
               </Card.Body>
-              <Card.Footer gap="2">
+              <Card.Footer gap="2" cursor={"default"}>
                 <Button variant="solid">Buy now</Button>
                 <Button variant="ghost">Add to cart</Button>
               </Card.Footer>
