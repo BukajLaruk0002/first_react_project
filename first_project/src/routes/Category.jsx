@@ -20,7 +20,7 @@ const Category = () => {
         {error && <Text color="red">{"Error"}</Text>}
         <SimpleGrid columns="2" gap={8}>
           {data?.map((product) => (
-            <Card.Root maxW="sm" overflow="hidden">
+            <Card.Root maxW="sm" overflow="hidden" cursor={"pointer"}>
               <Image
                 src={product.image}
                 alt={product.title}
