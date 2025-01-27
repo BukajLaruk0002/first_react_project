@@ -9,6 +9,7 @@ import Home from "./routes/Home.jsx";
 import Categories from "./routes/Categories.jsx";
 import Account from "./routes/Account.jsx";
 import axios from "axios";
+import Category from "./routes/Category.jsx";
 
 axios.defaults.baseURL = "https://fakestoreapi.com";
 
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="/categories" element={<Categories />} />
+              <Route path="/categories/:category" element={<Category />} />
               <Route path="/account" element={<Account />} />
             </Route>
           </Routes>
