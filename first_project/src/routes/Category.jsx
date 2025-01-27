@@ -25,8 +25,9 @@ const Category = () => {
                 src={product.image}
                 alt={product.title}
                 width={400}
-                height={350}
-                objectFit={"fill"}
+                height={300}
+                objectFit={"contain"}
+                padding={2}
               />
               <Card.Body gap="2">
                 <Card.Title key={product.id}>{product.title}</Card.Title>
