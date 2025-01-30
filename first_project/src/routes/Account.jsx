@@ -40,7 +40,7 @@ const Account = () => {
           flexDirection={"column"}
         >
           <Heading>Sign in</Heading>
-          <Field.Root invalid={false}>
+          <Field.Root invalid={!!errors?.email}>
             <Field.Label>Email</Field.Label>
             <Input
               placeholder="me@example.com"
