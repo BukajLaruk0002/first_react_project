@@ -22,6 +22,7 @@ const Navbar = () => {
       <Flex gap={8} mr={10}>
         <AppLink to="/categories">Categories</AppLink>
         <AppLink to="/account">Account</AppLink>
+        <Applink to="/register">Register</Applink>
       </Flex>
     </Flex>
   );

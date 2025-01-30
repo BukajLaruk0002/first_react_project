@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import useSWR from "swr";
 import { Flex, Spinner, Center, Alert, SimpleGrid } from "@chakra-ui/react";
 
-import ProductCard from "../ProductCard";
+import ProductCard from "@/components/ProductCard";
 
 const Category = () => {
   const { category } = useParams();
@@ -16,6 +16,7 @@ const Category = () => {
     <Flex flexDirection="column">
       <Center>
         {isLoading && <Spinner size="xl" />}
+
         {error && (
           <Alert.Root status="error">
             <Alert.Indicator />

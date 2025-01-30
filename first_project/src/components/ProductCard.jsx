@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router";
 import { Card, Image, Text, Button } from "@chakra-ui/react";
 import { Wallet, ShoppingCart } from "lucide-react";
@@ -26,7 +27,7 @@ const ProductCard = ({ product }) => {
         <Card.Body gap="2" backgroundColor="whitesmoke">
           <Card.Title color="black">{product.title}</Card.Title>
           <Card.Description color="black">
-            {product.description.length > 400
+            {product.description?.length > 400
               ? `${product.description.slice(0, 400)}(...)`
               : product.description}
           </Card.Description>
@@ -60,4 +61,5 @@ const ProductCard = ({ product }) => {
     </Link>
   );
 };
+
 export default ProductCard;

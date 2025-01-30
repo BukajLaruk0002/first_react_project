@@ -1,16 +1,17 @@
 import {
-  Heading,
   Flex,
+  Heading,
   Field,
   Input,
-  IconButton,
   Center,
+  IconButton,
   Button,
 } from "@chakra-ui/react";
-import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 import { useForm } from "react-hook-form";
 import validator from "validator";
+import axios from "axios";
 
 const Account = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,25 +22,36 @@ const Account = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      console.log(data);
+
+      const response = await axios.post("/auth/login", {
+        username: "mor_2314",
+        password: "83r5^_",
+      });
+
+      const { data: tokenData } = response;
+
+      console.log(tokenData?.token);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
-    <Center width={"100%"}>
+    <Center>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Flex
           gap={5}
-          justifyContent={"center"}
-          alignItems={"center"}
-          width={"30%"}
+          flexDirection={"column"}
           padding={5}
           rounded={"md"}
           shadow={"xl"}
           marginTop={10}
-          flexDirection={"column"}
         >
           <Heading>Sign in</Heading>
+
           <Field.Root invalid={!!errors?.email}>
             <Field.Label>Email</Field.Label>
             <Input
@@ -50,8 +62,13 @@ const Account = () => {
                   validator.isEmail(value) || "Invalid Email",
               })}
             />
-            <Field.ErrorText>Invalid email</Field.ErrorText>
+            <Field.ErrorText>
+              {errors?.email?.type === "required"
+                ? "Field Required"
+                : errors?.email?.message}
+            </Field.ErrorText>
           </Field.Root>
+
           <Field.Root invalid={!!errors?.password}>
             <Field.Label>Password</Field.Label>
             <Flex width={"100%"}>
@@ -65,10 +82,11 @@ const Account = () => {
                 {showPassword ? <EyeOff /> : <Eye />}
               </IconButton>
             </Flex>
-            <Field.ErrorText>Required</Field.ErrorText>
+            <Field.ErrorText>Field Required</Field.ErrorText>
           </Field.Root>
-          <Button size="sm" width={"100%"} type="submit">
-            Confirm
+
+          <Button colorPalette={"blue"} type="submit">
+            Sign in
           </Button>
         </Flex>
       </form>

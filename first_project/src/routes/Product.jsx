@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { Wallet, ShoppingCart } from "lucide-react";
 
-import { Rating } from "../components/ui/rating";
+import { Rating } from "@/components/ui/rating";
 
 const Product = () => {
   const { id } = useParams();

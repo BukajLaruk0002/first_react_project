@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { Provider } from "./components/ui/provider";
+import { Provider } from "@/components/ui/provider";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { SWRConfig } from "swr";
 import axios from "axios";
