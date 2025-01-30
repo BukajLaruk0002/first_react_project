@@ -52,7 +52,7 @@ const Account = () => {
             />
             <Field.ErrorText>Invalid email</Field.ErrorText>
           </Field.Root>
-          <Field.Root invalid={false}>
+          <Field.Root invalid={!!errors?.password}>
             <Field.Label>Password</Field.Label>
             <Flex width={"100%"}>
               <Input
