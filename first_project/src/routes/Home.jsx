@@ -1,6 +1,21 @@
 import useSWR from "swr";
-import { Flex, Spinner, Alert } from "@chakra-ui/react";
+import {
+  Flex,
+  Spinner,
+  Alert,
+  SimpleGrid,
+  createListCollection,
+} from "@chakra-ui/react";
 import ProductCard from "../ProductCard";
+import { useState } from "react";
+import {
+  SelectContent,
+  SelectItem,
+  SelectLabel,
+  SelectRoot,
+  SelectTrigger,
+  SelectValueText,
+} from "../components/ui/select";
 
 const Home = () => {
   const {
@@ -8,6 +23,14 @@ const Home = () => {
     error,
     isLoading,
   } = useSWR("/products?sort=asc&limit=4");
+
+  const productsLimit = createListCollection({
+    items: [
+      { label: "4", value: "4" },
+      { label: "8", value: "8" },
+      { label: "16", value: "16" },
+    ],
+  });
 
   return (
     <Flex justifyContent={"center"} alignItems={"center"}>
@@ -23,9 +46,11 @@ const Home = () => {
         </Alert.Root>
       )}
 
-      {products?.map((product) => (
-        <p key={product.id}>{product.title}</p>
-      ))}
+      <SimpleGrid columns={4} gap={8}>
+        {products?.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </SimpleGrid>
     </Flex>
   );
 };
