@@ -14,9 +14,14 @@ import { useForm } from "react-hook-form";
 import validator from "validator";
 import axios from "axios";
 import { Link } from "react-router";
+import { toaster } from "../components/ui/toaster.jsx";
+import { useAuth } from "../context/AuthContext.jsx";
+import { useNavigate } from "react-router";
 
 const Account = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -34,6 +39,12 @@ const Account = () => {
       });
 
       const { data: tokenData } = response;
+
+      login(tokenData?.token);
+
+      toaster.create({ title: "Logged in", message: "You are now logged in" });
+
+      Navigate("/");
 
       console.log(tokenData?.token);
     } catch (error) {
