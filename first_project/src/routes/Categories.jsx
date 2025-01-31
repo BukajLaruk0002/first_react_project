@@ -10,7 +10,7 @@ import {
 import useSWR from "swr";
 import { Link } from "react-router";
 
-import { categoryImages } from "@/data/category";
+import { categoryImages } from "../data/category";
 
 const Categories = () => {
   const { data: categories, error, isLoading } = useSWR("/products/categories");

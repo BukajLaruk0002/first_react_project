@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import useSWR from "swr";
 import { Flex, Spinner, Center, Alert, SimpleGrid } from "@chakra-ui/react";
 
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "../components/ProductCard";
 
 const Category = () => {
   const { category } = useParams();

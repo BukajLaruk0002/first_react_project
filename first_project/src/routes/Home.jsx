@@ -3,7 +3,7 @@ import { Flex, Spinner, Alert, SimpleGrid } from "@chakra-ui/react";
 import { createListCollection } from "@chakra-ui/react";
 import { useState } from "react";
 
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "../components/ProductCard";
 import {
   SelectContent,
   SelectItem,

@@ -1,9 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { Provider } from "@/components/ui/provider";
+import { Provider } from "../src/components/ui/provider.jsx";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { SWRConfig } from "swr";
 import axios from "axios";
+import { Toaster, toaster } from "./components/ui/toaster.jsx";
 
 import Layout from "./components/Layout/index.jsx";
 import Home from "./routes/Home.jsx";
@@ -11,6 +12,7 @@ import Categories from "./routes/Categories.jsx";
 import Category from "./routes/Category.jsx";
 import Product from "./routes/Product.jsx";
 import Account from "./routes/Account.jsx";
+import Signup from "./routes/Signup.jsx";
 import fetcher from "./fetcher.js";
 
 axios.defaults.baseURL = "https://fakestoreapi.com";
@@ -27,10 +29,12 @@ createRoot(document.getElementById("root")).render(
               <Route path="/categories/:category" element={<Category />} />
               <Route path="/product/:id" element={<Product />} />
               <Route path="/account" element={<Account />} />
+              <Route path="/signup" element={<Signup />} />
             </Route>
           </Routes>
         </BrowserRouter>
       </SWRConfig>
+      <Toaster />
     </Provider>
   </StrictMode>
 );
